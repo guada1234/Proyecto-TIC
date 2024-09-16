@@ -1,2 +1,4 @@
-package com.um.edu.uy.entities;public class Room {
+package com.um.edu.uy.entities;
+
+public class Room {
 }

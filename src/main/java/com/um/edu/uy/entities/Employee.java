@@ -1,2 +1,4 @@
-package com.um.edu.uy.entities;public class Employee {
+package com.um.edu.uy.entities;
+
+public class Employee {
 }
