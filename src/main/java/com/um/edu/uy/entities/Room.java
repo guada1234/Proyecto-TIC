@@ -1,32 +1,43 @@
 package com.um.edu.uy.entities;
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@Builder
+@Entity
 public class Room {
     private int rows;
 
     private int columns;
 
-    private List<Function> functions;
+    private List<Screening> screenings;
 
     public Room() {
         this.rows = 10;
         this.columns = 15;
-        this.functions = new LinkedList<Function>();
+        this.screenings = new LinkedList<Screening>();
     }
 
     public Room(int rows, int columns) {
         this.rows = rows;
         this.columns = columns;
-        this.functions = new LinkedList<Function>();
+        this.screenings = new LinkedList<Screening>();
     }
 
 
     public void CreateFunction(LocalDateTime dateAndTime, Movie movie) {
         boolean[][] seatsMatrix = new boolean[rows][columns];
-        Function newFunction = new Function(dateAndTime,movie,seatsMatrix);
+        Screening newScreening = new Screening(dateAndTime,movie,seatsMatrix);
 
-        functions.add(newFunction);
+        screenings.add(newScreening);
     }
 }

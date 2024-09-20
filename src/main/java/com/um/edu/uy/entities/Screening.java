@@ -1,18 +1,28 @@
 package com.um.edu.uy.entities;
 
 import com.um.edu.uy.exceptions.InvalidDataException;
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-public class Function {
+@Getter
+@Setter
+@Builder
+@Entity
+public class Screening {
 
     private final LocalDateTime dateAndTime;
 
     private final Movie movie;
+    // idioma
 
     private boolean[][] reservedSeats;
 
-    public Function(LocalDateTime dateAndTime, Movie movie, boolean[][] reservedSeats) {
+    public Screening(LocalDateTime dateAndTime, Movie movie, boolean[][] reservedSeats) {
         this.dateAndTime = dateAndTime;
         this.movie = movie;
         this.reservedSeats = reservedSeats;

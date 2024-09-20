@@ -1,12 +1,41 @@
 package com.um.edu.uy.entities;
 
-import java.time.LocalTime;
+import com.um.edu.uy.enums.MovieGenre;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@Builder
+@Entity
 public class Movie {
 
     private String title;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long Id;
+
     private LocalTime duration;
 
     private String description;
+
+    private LocalDate releaseDate;
+
+    private String director;
+
+    private List<MovieGenre> genres;
+
+
 }
