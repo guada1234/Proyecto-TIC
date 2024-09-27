@@ -1,10 +1,7 @@
 package com.um.edu.uy.entities;
 
 import com.um.edu.uy.enums.MovieGenre;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -29,6 +26,7 @@ public class Movie {
 
     private LocalTime duration;
 
+    @Column(name = "descr")
     private String description;
 
     private LocalDate releaseDate;
