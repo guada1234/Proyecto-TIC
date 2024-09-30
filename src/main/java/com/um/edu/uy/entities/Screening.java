@@ -1,5 +1,6 @@
 package com.um.edu.uy.entities;
 
+import com.um.edu.uy.enums.ScreeningLanguage;
 import com.um.edu.uy.exceptions.InvalidDataException;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
@@ -18,14 +19,16 @@ public class Screening {
     private final LocalDateTime dateAndTime;
 
     private final Movie movie;
-    // idioma
+
+    private ScreeningLanguage language;
 
     private boolean[][] reservedSeats;
 
-    public Screening(LocalDateTime dateAndTime, Movie movie, boolean[][] reservedSeats) {
+    public Screening(LocalDateTime dateAndTime, Movie movie, boolean[][] reservedSeats, ScreeningLanguage language) {
         this.dateAndTime = dateAndTime;
         this.movie = movie;
         this.reservedSeats = reservedSeats;
+        this.language = language;
     }
 
     public void MakeSingleReservation(int seatRow, int seatColumn) throws InvalidDataException {

@@ -1,4 +1,5 @@
 package com.um.edu.uy.entities;
+import com.um.edu.uy.enums.ScreeningLanguage;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,9 +35,9 @@ public class Room {
     }
 
 
-    public void CreateFunction(LocalDateTime dateAndTime, Movie movie) {
+    public void CreateFunction(LocalDateTime dateAndTime, Movie movie, ScreeningLanguage language) {
         boolean[][] seatsMatrix = new boolean[rows][columns];
-        Screening newScreening = new Screening(dateAndTime,movie,seatsMatrix);
+        Screening newScreening = new Screening(dateAndTime,movie,seatsMatrix, language);
 
         screenings.add(newScreening);
     }
