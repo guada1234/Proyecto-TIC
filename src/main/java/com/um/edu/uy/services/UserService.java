@@ -48,7 +48,7 @@ public class UserService {
                 .idCountry(idCountry)
                 .idCountry(idCountry)
                 .build();
-        // Tarjeta de credito ahora o despues?
+        // Tarjeta de credito ahora o despues: mejor pedirlo al principio, podemos modificar el dato de tarjeta
         return userRepo.save(customer);
     }
 

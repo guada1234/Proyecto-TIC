@@ -6,7 +6,7 @@ import java.time.Period;
 public class FieldValidation {
 
     public static int minimumAge = 12;
-    public static boolean isPasswordValid(String password) {
+    public static boolean isPasswordValid(String password) {  //buscar validator de spreen.
         if (password != null) {
             if (password.length() < 8) {
                 return false;
